@@ -63,7 +63,7 @@ jobs:
           token: \${{ secrets.ACTION_TOKEN }}
           path: k8s-manifest-repo
         run: |
-          if [[ "${{secrets.ACTION_TOKEN}}" == "" ]]; then
+          if [[ "\${{secrets.ACTION_TOKEN}}" == "" ]]; then
             echo The secret does not exist
           else
             echo The secret exists
