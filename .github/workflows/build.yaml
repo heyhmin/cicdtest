@@ -55,7 +55,20 @@ jobs:
           
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
-
+        
+      - name: Check token
+        with:
+          repository: heyhmin/k8s-manifest-repo
+          ref: main
+          token: \${{ secrets.ACTION_TOKEN }}
+          path: k8s-manifest-repo
+        run: |
+          if [[ "${{secrets.ACTION_TOKEN}}" == "" ]]; then
+            echo The secret does not exist
+          else
+            echo The secret exists
+          fi
+        
       - name: Checkout kustomize repository
         uses: actions/checkout@v2
         with:
