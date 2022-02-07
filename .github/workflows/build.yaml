@@ -40,13 +40,13 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         id: image-info
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: demo-frontend
+          ECR_REGISTRY: 454457097752.dkr.ecr.ap-northeast-2.amazonaws.com #${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: goormi_web
           IMAGE_TAG: ${{ steps.image.outputs.version }}
-          rds_host: ${{ secrets.rds_host }}
-          rds_user: ${{ secrets.rds_user }}
-          rds_password: ${{ secrets.rds_password }}
-          rds_database: ${{ secrets.rds_database }}
+          rds_host: ${{ secrets.RDS_HOST }}
+          rds_user: ${{ secrets.RDS_USER }}
+          rds_password: ${{ secrets.RDS_PASSWORD }}
+          rds_database: ${{ secrets.RDS_DATABASE }}
         run: |
           echo "::set-output name=ecr_repository::$ECR_REPOSITORY"
           echo "::set-output name=image_tag::$IMAGE_TAG"
