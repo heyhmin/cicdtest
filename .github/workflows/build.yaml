@@ -79,6 +79,5 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git commit -am "Update image tag"
-          # git push -u origin main
-          git push -u origin ${{ secrets.ACTION_TOKEN }}@main
-          # git push https://${{ secrets.ACTION_TOKEN }}@github.com/heyhmin/k8s-manifest-repo.git
+          git push -u origin main
+          
