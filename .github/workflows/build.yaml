@@ -54,18 +54,20 @@ jobs:
           echo "rds_user is ::$rds_user::"
           echo "rds_password is ::$rds_password::"
           echo "rds_database is ::$rds_database::"
+          #
           echo "docker build \
           --build-arg rds_host='${rds_host}' \
           --build-arg rds_user='${rds_user}' \
           --build-arg rds_password='${rds_password}' \
-          --build-arg ENV rds_database='${rds_database}' \
-          --tag '$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG' ."
+          --build-arg rds_database='${rds_database}' \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ."
+          # 
           docker build \
           --build-arg rds_host='${rds_host}' \
           --build-arg rds_user='${rds_user}' \
           --build-arg rds_password='${rds_password}' \
-          --build-arg ENV rds_database='${rds_database}' \
-          --tag '$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG' .
+          --build-arg rds_database='${rds_database}' \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           # docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
       - name: Run Trivy vulnerability scanner
