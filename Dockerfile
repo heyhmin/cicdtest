@@ -1,12 +1,12 @@
-ARG rds_host=default
-ARG rds_user=default
-ARG rds_password=default
-ARG rds_database=default
 FROM node:latest
 # 작업 폴더를 만들고 npm 설치
 RUN mkdir /app
 WORKDIR /app
 # 환경 변수 설정
+ARG rds_host=default
+ARG rds_user=default
+ARG rds_password=default
+ARG rds_database=default
 ENV PATH /app/node_modules/.bin:$PATH
 ENV rds_host ${rds_host}
 ENV rds_user ${rds_user}
