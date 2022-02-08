@@ -1,0 +1,4 @@
+rds_host=goormy-database-1.ce7mkzss15bi.ap-northeast-2.rds.amazonaws.com
+rds_user=admin
+rds_password=groomy1!
+rds_database=goormy_first_database
