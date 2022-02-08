@@ -8,10 +8,10 @@ ARG rds_user=default
 ARG rds_password=default
 ARG rds_database=default
 ENV PATH /app/node_modules/.bin:$PATH
-ENV rds_host ${rds_host}
-ENV rds_user ${rds_user}
-ENV rds_password ${rds_password}
-ENV rds_database ${rds_database}
+ENV rds_host=${rds_host}
+ENV rds_user=${rds_user}
+ENV rds_password=${rds_password}
+ENV rds_database=${rds_database}
 # npm install
 COPY package*.json ./
 RUN npm install -g npm@8.3.2
