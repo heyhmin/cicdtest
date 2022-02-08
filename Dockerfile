@@ -8,7 +8,8 @@ ARG rds_user=${rds_user}
 ARG rds_password=${rds_password}
 ARG rds_database=${rds_database}
 RUN touch /.env                                                                                                   
-RUN printenv > /.env 
+RUN echo "rds_host=$rds_host \nrds_user=$rds_user \n" \
+         "rds_password=$rds_password \n rds_database=$rds_database" > /.env 
 # ENV PATH /app/node_modules/.bin:$PATH
 # ENV rds_host=${rds_host}
 # ENV rds_user=${rds_user}
