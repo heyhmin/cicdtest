@@ -3,16 +3,16 @@ FROM node:latest
 RUN mkdir /app
 WORKDIR /app
 # 환경 변수 설정
-ARG rds_host=${rds_host}
-ARG rds_user=${rds_user}
-ARG rds_password=${rds_password}
-ARG rds_database=${rds_database}                                                                                                
+ARG rds_host
+ARG rds_user
+ARG rds_password
+ARG rds_database                                                                                           
 RUN set -x \
 && { \
-echo 'rds_host=goormy-database-1.ce7mkzss15bi.ap-northeast-2.rds.amazonaws.com'; \
-echo 'rds_user=admin'; \
-echo 'rds_password=groomy1!'; \
-echo 'rds_database=goormy_first_database'; \
+echo 'rds_host=${rds_host:-nullArg}'; \
+echo 'rds_user=${rds_user:-nullArg}'; \
+echo 'rds_password=${rds_password:-nullArg}'; \
+echo 'rds_database=${rds_database:-nullArg}'; \
 } > ./.env \
 && cat ./.env
 # npm install
