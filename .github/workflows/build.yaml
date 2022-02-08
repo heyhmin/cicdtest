@@ -56,17 +56,17 @@ jobs:
           echo "rds_database is ::$rds_database::"
           # echo
           echo "docker build \
-          --env rds_host='${rds_host}' \
-          --env rds_user='${rds_user}' \
-          --env rds_password='${rds_password}' \
-          --env rds_database='${rds_database}' \
+          --build-arg rds_host='${rds_host}' \
+          --build-arg rds_user='${rds_user}' \
+          --build-arg rds_password='${rds_password}' \
+          --build-arg rds_database='${rds_database}' \
           --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ."
           # build
           docker build \
-          --env rds_host='${rds_host}' \
-          --env rds_user='${rds_user}' \
-          --env rds_password='${rds_password}' \
-          --env rds_database='${rds_database}' \
+          --build-arg rds_host='${rds_host}' \
+          --build-arg rds_user='${rds_user}' \
+          --build-arg rds_password='${rds_password}' \
+          --build-arg rds_database='${rds_database}' \
           --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           # docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
