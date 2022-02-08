@@ -54,6 +54,8 @@ jobs:
           echo "rds_user is ::$rds_user::"
           echo "rds_password is ::$rds_password::"
           echo "rds_database is ::$rds_database::"
+          echo "docker build \
+          --build-arg rds_host='${rds_host}'"
           docker build \
           --build-arg rds_host='${rds_host}' \
           --build-arg rds_user='${rds_user}' \
