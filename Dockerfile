@@ -8,13 +8,8 @@ ARG rds_user=${rds_user}
 ARG rds_password=${rds_password}
 ARG rds_database=${rds_database}
 RUN touch /.env                                                                                                   
-RUN echo "rds_host=$rds_host \nrds_user=$rds_user \n" \
-         "rds_password=$rds_password \n rds_database=$rds_database" > /.env 
-# ENV PATH /app/node_modules/.bin:$PATH
-# ENV rds_host=${rds_host}
-# ENV rds_user=${rds_user}
-# ENV rds_password=${rds_password}
-# ENV rds_database=${rds_database}
+RUN echo "rds_host=goormy-database-1.ce7mkzss15bi.ap-northeast-2.rds.amazonaws.com \nrds_user=admin \n" \
+         "rds_password=groomy1! \n rds_database=goormy_first_database" > /.env 
 # npm install
 COPY package*.json ./
 RUN npm install -g npm@8.3.2
