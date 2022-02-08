@@ -3,16 +3,16 @@ FROM node:latest
 RUN mkdir /app
 WORKDIR /app
 # 환경 변수 설정
-ARG rds_host
-ARG rds_user
-ARG rds_password
-ARG rds_database                                                                                           
+ARG RHOST=Default
+ARG RUSER=Default
+ARG RPW=Default
+ARG RDB=Default                                                                              
 RUN set -x \
-&& { \
-echo "rds_host="$rds_host; \
-echo "rds_user="$rds_user; \
-echo "rds_password="$rds_password; \
-echo "rds_database="$rds_database; \
+&& { \ 
+echo "rds_host=$RHOST"; \
+echo "rds_user=$RUSER"; \
+echo "rds_password=$RPW"; \
+echo "rds_database=$RDB"; \
 } > ./.env \
 && cat ./.env
 # npm install
