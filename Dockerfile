@@ -1,12 +1,12 @@
+ARG rds_host
+ARG rds_user
+ARG rds_password
+ARG rds_database
 FROM node:latest
 # 작업 폴더를 만들고 npm 설치
 RUN mkdir /app
 WORKDIR /app
 # 환경 변수 설정
-ARG rds_host
-ARG rds_user
-ARG rds_password
-ARG rds_database
 ENV PATH /app/node_modules/.bin:$PATH
 ENV rds_host=$rds_host
 ENV rds_user=$rds_user
