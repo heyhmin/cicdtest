@@ -63,13 +63,12 @@ jobs:
           --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ."
           # build
           docker build \
-          --build-arg RHOST='${rds_host}' \
-          --build-arg RUSER='${rds_user}' \
-          --build-arg RPW='${rds_password}' \
-          --build-arg RDB='${rds_database}' \
+          # --build-arg RHOST='${rds_host}' \
+          # --build-arg RUSER='${rds_user}' \
+          # --build-arg RPW='${rds_password}' \
+          # --build-arg RDB='${rds_database}' \
           --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           # docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker inspect --format '{{ index (index .Config.Env) }}' $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
       # - name: Run Trivy vulnerability scanner
       #   uses: aquasecurity/trivy-action@master
