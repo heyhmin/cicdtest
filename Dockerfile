@@ -9,10 +9,10 @@ ARG rds_password
 ARG rds_database                                                                                           
 RUN set -x \
 && { \
-echo "rds_host=$rds_host"; \
-echo "rds_user=$rds_user"; \
-echo "rds_password=$rds_password"; \
-echo "rds_database=$rds_database"; \
+echo "rds_host="$rds_host; \
+echo "rds_user="$rds_user; \
+echo "rds_password="$rds_password; \
+echo "rds_database="$rds_database; \
 } > ./.env \
 && cat ./.env
 # npm install
