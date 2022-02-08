@@ -9,10 +9,10 @@ ARG RPW=Default
 ARG RDB=Default                                                                              
 RUN set -x \
 && { \ 
-echo "rds_host=$RHOST"; \
-echo "rds_user=$RUSER"; \
-echo "rds_password=$RPW"; \
-echo "rds_database=$RDB"; \
+echo " rds_host=$RHOST "; \
+echo " rds_user=$RUSER "; \
+echo " rds_password=$RPW "; \
+echo " rds_database=$RDB "; \
 } > ./.env \
 && cat ./.env
 # npm install
