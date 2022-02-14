@@ -184,7 +184,7 @@ height:auto
 			</dl>
 			<button type="button" class="cnt_q_btn" data-active="explan01">
 				<p>상세보기</p>
-				<img src="images/kabhom/sub/cnt_q_up.png" alt="설명 접기">
+				<img src="images/cnt_q_up.png" alt="설명 접기">
 			</button>
 		</div>
 		<div class="line_box explan01" style="display:none;">
@@ -319,7 +319,7 @@ height:auto
 			</dl>
 			<button type="button" class="cnt_q_btn" data-active="explan02">
 				<p>상세보기</p>
-				<img src="images/kabhom/sub/cnt_q_up.png" alt="설명 접기">
+				<img src="images/cnt_q_up.png" alt="설명 접기">
 			</button>
 		</div>
 		<div class="line_box explan02" style="display:none">
@@ -404,7 +404,7 @@ height:auto
 			</dl>
 			<button type="button" class="cnt_q_btn" data-active="explan03">
 				<p>상세보기</p>
-				<img src="images/kabhom/sub/cnt_q_up.png" alt="설명 접기">
+				<img src="images/cnt_q_up.png" alt="설명 접기">
 			</button>
 		</div>
 		<div class="line_box explan03" style="display:none" data-stde="2022-01-13" data-pbat="N">
@@ -516,12 +516,12 @@ height:auto
 var explanation = {
 	hide : function($obj) {
 		$obj.removeClass('cnt_q_on');
-		$obj.children('img').attr('src', 'images/kabhom/sub/cnt_q_up.png');
+		$obj.children('img').attr('src', 'images/cnt_q_up.png');
 		$('.' + $obj.data('active')).hide();
 	}
 	, show : function($obj) {
 		$obj.addClass('cnt_q_on');
-		$obj.children('img').attr('src', 'images/kabhom/sub/cnt_q_down.png');
+		$obj.children('img').attr('src', 'images/cnt_q_down.png');
 		$('.' + $obj.data('active')).show();
 	}
 }
